@@ -2,7 +2,7 @@
 
 use Closure;
 
-class ExampleMiddleware {
+class AuthorizedMiddleware {
 
     /**
      * Handle an incoming request.
@@ -13,6 +13,11 @@ class ExampleMiddleware {
      */
     public function handle($request, Closure $next)
     {
+        if($request->header("Token") !== "INSERT YOUR SECURE TOKEN IN HERE!!!")
+        {
+            abort(403, 'Unauthorized action.');
+        }
+
         return $next($request);
     }
 

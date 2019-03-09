@@ -67,6 +67,10 @@ $app->singleton(
      'authorized' => 'App\Http\Middleware\AuthorizedMiddleware',
  ]);
 
+ $app->middleware([
+    App\Http\Middleware\CorsMiddleware::class
+ ]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

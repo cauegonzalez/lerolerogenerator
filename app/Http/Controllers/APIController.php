@@ -170,7 +170,7 @@ class APIController extends BaseController
 
         $phrase = $tab0[$this->generateRandom(0,count($tab0))] . $tab1[$this->generateRandom(0,count($tab1))] . $tab2[$this->generateRandom(0,count($tab2))] . $tab3[$this->generateRandom(0,count($tab3))];
 
-        return $phrase;
+        return json_encode(['phrase'=>$phrase]);
     }
 
     /**
